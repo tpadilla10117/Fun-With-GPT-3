@@ -1,13 +1,13 @@
 /* This file manages exported Components: */
 /* PAGES: */
-    export { default as HomePage } from '../pages/home/Home.jsx';
+    
 
 /* ------------------------------------------------------------------------------------------------------------- */
 
 /* Components: */
 
-    export { default as SearchBox } from '../components/searchbox/SearchBox.jsx';
+    export { default as Form } from '../components/form/Form.jsx';
 
-    export { default as AstronomyCards} from '../components/astronomycards/AstronomyCards.jsx';
+    export { default as ApiResponses } from '../components/apiResponses/ApiResponses.jsx';
 
-    export { default as Pagination} from '../components/pagination/Pagination.js';
+    export { default as CtaButton } from '../components/ctaButton/CtaButton.jsx';

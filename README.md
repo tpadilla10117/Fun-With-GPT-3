@@ -1,6 +1,6 @@
 # App Description
 
-- Spacestagram is an app that can pull images, and allow the user to “like” and “unlike” their favourite images.
+- TBD
 
 ## Table of Contents:
 * [Deployment](#Deployment)
@@ -14,10 +14,10 @@
 
 ## Deployment:
 
--Via Vercel @ {https://spacestagram-ghc1owmja-tpadilla10117.vercel.app/}
+-Via Vercel @ {}
 
 ## Usage Instructions:
-- 1) In the search bar, type in an acceptable query to the NASA APOD API.  (**SEE https://github.com/nasa/apod-api ***).  I sugest trying the query, {count=50} or any other integer for count value. (Return value is a JSON Array)
+- 1) 
 
 - 2) You can navigate the datasets with pagination by using the navigation buttons fixed to the screen
 
@@ -49,10 +49,9 @@ Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variabl
 
 ## Limitations:
 
-- As of 01/11/22, 
+- As of 05/10/22, 
 
-    - 1) Would be nice to show query instructions on the UI, perhaps a modal on initial render, and a button that renders the modal on click
-    - 2) Like-state maintained in local storage persist for any similarly indexed card - need unique identifier in backend for proper state mgmt
+    - 1) 
 
 ## TroubleShooting & Bugs:
     - **NOTE: if query a date, you don't receive a JSON Array, but rather a string

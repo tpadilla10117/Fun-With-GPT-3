@@ -5,6 +5,8 @@
   border: 0;
 }
 
+@import './components/form/Form.scss';
+
 body {
 
   h1, h2 {
@@ -32,13 +34,10 @@ body {
   
 }
 
-.App {
+/* .App {
   background-image: url('./assets/nebula.jpg');
   background-size: cover;
   background-position: bottom;
   transition: 0.8s ease-in-out;
-}
-
-/* .App.warm {
-  
 } */
+
