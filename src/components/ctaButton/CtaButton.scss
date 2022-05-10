@@ -1,0 +1,16 @@
+.form-submit-btn {
+    height: 3.5rem;
+    padding: 0 2rem;
+    border-radius: 0.375rem;
+    background: #4503dc;
+    color: #fff;
+    box-shadow: 0 0.4rem 0 0 #3700b8;
+    letter-spacing: 3px;
+    -ms-text-combine-horizontal: all 0.3s;
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(0.3rem);
+        box-shadow: 0 0.2rem 0 0 #3700b8;
+    }
+}

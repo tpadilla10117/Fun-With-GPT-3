@@ -1,6 +1,7 @@
 /* This file manages exported Components: */
 /* PAGES: */
     
+    export { default as Home } from '../pages/home/Home.jsx';
 
 /* ------------------------------------------------------------------------------------------------------------- */
 

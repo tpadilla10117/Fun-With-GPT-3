@@ -17,6 +17,7 @@ function Form( { content } ) {
             <textarea rows='5' placeholder='Message' name='message' required/>
           </div>
 
+    {/* Where the 'Submit' button is rendered: */}
         {content}
 
         </form>
