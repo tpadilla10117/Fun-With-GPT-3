@@ -30,7 +30,7 @@
 - 2) `npm i node-modules`
 - 3) `npm i dotenv`
 - 4) `npm i node-sass` & `npm i sass`
-- 5) `npm install react-fetch-progressbar`
+
 
 ## Tech Stack:
 
@@ -39,7 +39,8 @@
 
 ## Dependencies:
 
-### `npm install react-fetch-progressbar` {https://www.npmjs.com/package/react-fetch-progressbar} 
+### `npm install axios` {https://www.npmjs.com/package/axios} 
+    - Promise based HTTP client for the browser and node.js
 
 ### `npm i dotenv` => To load environment variables from `.env` file to `process.env` object
 

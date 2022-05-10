@@ -1,9 +1,9 @@
 import React from 'react';
 
-function CtaButton( {text, classnames} ) {
+function CtaButton( {text, classnames, clickHandler} ) {
   return (
     <>
-        <button className={classnames} >
+        <button className={classnames} onClick={clickHandler} >
             {text}
         </button>
     </>

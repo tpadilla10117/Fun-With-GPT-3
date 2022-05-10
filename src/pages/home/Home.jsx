@@ -15,7 +15,10 @@ const BASE_URL = 'https://api.openai.com/v1/engines/text-curie-001/completions';
 
 const HomePage = () => {
 
-/* TODO: Data returns as an array from the API still */
+    const submitForm = () => {
+        /* event.preventDefault(); */
+        console.log('clicked the form button!')
+    };
 
     
     return (
@@ -27,6 +30,7 @@ const HomePage = () => {
                 <CtaButton 
                     classnames={'form-submit-btn'}
                     text={'Submit'}
+                    clickHandler={submitForm }
                 />
                 }
             />
