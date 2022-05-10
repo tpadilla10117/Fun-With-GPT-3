@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+
+  h1, h2 {
+    font-family: 'Space Grotesk', 'monseratt',sans-serif;
+    color: #4FB2E7;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  p , h3 {
+    font-family: 'Roboto Condensed', 'monseratt', sans-serif;
+    line-height: 1.5;
+    
+  }
+
+  h3 {
+    color: #B66767;
+  }
+
+  p {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+}
+
+.App {
+  background-image: url('./assets/nebula.jpg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.8s ease-in-out;
+}
+
+/* .App.warm {
+  
+} */

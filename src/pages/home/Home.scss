@@ -1,0 +1,44 @@
+
+  main {
+      min-height: 100vh;
+      
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75) );
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      /* overflow-y: scroll; */
+
+    .homepage-sections {
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
+        /* height: 3000px;
+        overflow-y: scroll; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        
+        .homepage-intro-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          
+          
+          background: hsla(0,0%,42.7%,.12);
+              box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
+              backdrop-filter: blur(20px);
+              padding: 10px;
+              border-radius: 5px;
+
+          .homepage-intro {
+              
+              @media only screen and (max-width: 768px) {
+                font-size: 18px;
+              }
+          }
+        }
+    }
+
+  }

@@ -1,0 +1,132 @@
+#pagination {
+
+    .pagination-interactions {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        top: 1;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 999;
+        
+
+        .pagination-item {
+            /* background: #777; */
+            background: #36BF9D;
+            color: #fff;
+            border: 1px solid #FFF;
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+            transition: all 150ms ease-in-out;
+            border-radius: 50%;
+            height: 30px;
+            width: 30px;
+            position: relative;
+            margin: 5px;
+            cursor: pointer;
+            
+
+           /*  span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                
+            } */
+
+            @media only screen and (max-width: 480px) {
+                height: 20px;
+                width: 20px;
+            }
+            
+
+            &:hover {
+                background-color: #36BF9D; 
+                box-shadow: 0px 1px 1px 1px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-3px);
+                /* transform: scale(2); */
+
+                &:active {
+                    transform: scale(1.15);
+                }
+            }
+
+            &.active {
+                color: #fb3958;
+                pointer-events: none;
+                border: 1px solid #888;
+                background: #fff;
+            }
+
+            &.disabled {
+                pointer-events: none;
+                box-shadow: none;
+                background: #36BF9D;
+                opacity: .5;
+            }
+        }
+
+        .pagination-next {
+            margin-right: -55px;
+        }
+
+        .pagination-prev {
+            margin-left: -55px;
+        }
+
+        .pagination-next, .pagination-prev {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            width: 100px;
+            height: 40px;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            /* background: #777; */
+            background: #36BF9D;
+            box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            font-size: 16px;
+            margin-top: -100px;
+
+            &.disabled {
+                pointer-events: none;
+                box-shadow: none;
+                background: #36BF9D;
+                opacity: .5;
+            }
+            
+            @media only screen and (max-width: 480px) {
+                margin: 20px;
+            }
+
+    
+            &:hover {
+                background-color: #36BF9D; 
+                box-shadow: 0px 2px 2px 2px rgba(46, 229, 157, 0.4);
+                color: #fff;
+                transform: translateY(-7px);
+
+                &:active {
+                    transform: scale(1);
+                }
+            }
+    
+            p {
+                padding: 5px;
+                letter-spacing: 2px;
+            }
+        }
+
+        
+    }
+
+
+
+
+
+}
