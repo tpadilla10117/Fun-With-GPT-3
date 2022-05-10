@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ApiResponses() {
+function ApiResponses( { apiResponseState } ) {
   return (
     <section>
-        ApiResponses
+        {/* TODO: Would need to .map over apiResponseState (the app state) and render out responses */}
 
     </section>
   )

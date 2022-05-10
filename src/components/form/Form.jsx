@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 /* import axios from 'axios'; */
-import { CtaButton } from '../utils';
+import { CtaButton, ApiResponses } from '../utils';
 const { Configuration, OpenAIApi } = require("openai");
 
 require('dotenv').config();
@@ -134,6 +134,11 @@ console.log(postData)
         </form>
 
       </div>
+
+    {/* TODO: Need to pass state down to ApiResponses to render out a feed: */}
+      <ApiResponses 
+        apiResponseState={''}
+      />
 
     
 
