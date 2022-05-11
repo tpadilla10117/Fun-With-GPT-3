@@ -4,6 +4,46 @@ function ApiResponses( { apiResponseState } ) {
 
   const savedResponsesString = localStorage.getItem('initial-responses');
   const parseSavedResponses = JSON.parse(savedResponsesString);
+
+  const renderCorrectDomElementsBasedOnUserInput = () => {
+    if(parseSavedResponses) {
+      return parseSavedResponses.map( (response, index) => {
+        return (
+          <div className='apiResponses-wrapper' key={index}>
+                <p>
+                  <b>Prompt:</b> {response.postData}
+                </p>
+                <p>
+                  <b>Response:</b> {response.apiResponseData}
+                </p>
+
+          </div>
+        )
+      })
+    } else if(apiResponseState) {
+        return apiResponseState.map( (response, index) => {
+          return (
+            <div className='apiResponses-wrapper' key={index}>
+              <p>
+                <b>Prompt:</b> {response.postData}
+              </p>
+              <p>
+                <b>Response:</b> {response.apiResponseData}
+              </p>
+
+            </div>
+          )
+        })
+    } else {
+      return <div className='apiResponses-wrapper'>
+      No Responses
+    </div>
+    }
+
+
+  };
+
+  
   
 
 console.log(apiResponseState)
@@ -14,8 +54,11 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
         {/* TODO: Would need to .map over apiResponseState (the app state) and render out responses */}
       
       <h3>Responses:</h3>
+      
+      {renderCorrectDomElementsBasedOnUserInput()}
+        
 
-      {
+      {/* {
         parseSavedResponses ?
           parseSavedResponses.map( (response, index) => {
             return (
@@ -33,11 +76,23 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
 
         :
 
-        <div className='apiResponses-wrapper'>
-              No Responses
-        </div>
-         
-      }
+        apiResponseState.map( (response, index) => {
+          return (
+            <div className='apiResponses-wrapper' key={index}>
+              <p>
+                <b>Prompt:</b> {response.postData}
+              </p>
+              <p>
+                <b>Response:</b> {response.apiResponseData}
+              </p>
+
+            </div>
+          )
+        })
+ 
+      } */}
+
+      
 
       {/* {apiResponseState ? 
             
