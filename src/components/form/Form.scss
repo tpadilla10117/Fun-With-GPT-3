@@ -11,6 +11,10 @@
     align-items: center;
     justify-content: center;
 
+    .form-header-parent-container {
+        margin-top: 2rem;
+    }
+
     .form-wrapper {
         /* position: absolute; */
         z-index: 2;
@@ -33,7 +37,6 @@
             flex-direction: column;
             align-items: center;
             
-
             .form-input-wrapper {
                 height: 100%;
                 width: 100%;
@@ -41,22 +44,33 @@
 
                 margin: 0 0 20px 0;
 
+                @media (min-width: 620px) {
+                    width: 80%;
+                }
+
                 .form-input-label {
-                    color: red;
+                    color: #B66767;
+                    font-weight: bold;
+                    font-family: 'Roboto Condensed', 'monseratt', sans-serif;
+                    line-height: 1.5;
                     
                 }
 
                 textarea {
-                    height: 200px;
+                    height: 350px;
                     width: 100%;
                     padding: 10px;
                     margin: 10px 0 0 0;
+                    border-radius: 25px;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                    
                 }
             }
 
-            .form-submit-btn {
+            /* .form-submit-btn {
 
-            }
+            } */
         }
     }
 }

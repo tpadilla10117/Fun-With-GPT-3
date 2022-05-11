@@ -1,12 +1,33 @@
 .apiResponses-parent-container {
     height: 100%;
-    border: 1px solid yellow;
+    width: 100%;
+    padding: 2rem;
+    /* border: 1px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
     
     .apiResponses-wrapper {
+        border: 2px solid black;
+        height: 200px;
+        width: 100%;
+        margin: 10px 0px 0 0;
+        border-radius: 5px;
+
+
+        .p-spantxt {
+            font-weight: bold;
+        }
 
         p {
             color: black;
             margin: 10px;
+            text-align: left;
+        }
+
+        &:hover {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         }
     }
 

@@ -11,10 +11,10 @@ function ApiResponses( { apiResponseState } ) {
         return (
           <div className='apiResponses-wrapper' key={index}>
                 <p>
-                  <b>Prompt:</b> {response.postData}
+                  <span className='p-spantxt'>Prompt:</span> {response.postData}
                 </p>
                 <p>
-                  <b>Response:</b> {response.apiResponseData}
+                  <span className='p-spantxt'>Response:</span> {response.apiResponseData}
                 </p>
 
           </div>
