@@ -9,11 +9,15 @@
     
     
     .apiResponses-wrapper {
-        border: 2px solid black;
+        border: 2px solid rgb(128, 128, 128);
         height: 200px;
         width: 100%;
         margin: 10px 0px 0 0;
         border-radius: 5px;
+        /* background-color: #ffffff10; */
+        background-color: #fff;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
 
 
         .p-spantxt {

@@ -14,10 +14,11 @@ body {
 
   h1, h2 {
     font-family: 'Space Grotesk', 'monseratt',sans-serif;
-    color: #1ac1dd;
+    color: #fff;
     line-height: 1.5;
     letter-spacing: 1px;
     text-transform: uppercase;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   p , h3 {
@@ -27,7 +28,7 @@ body {
   }
 
   h3 {
-    color: #B66767;
+    color: #fff;
   }
 
   p {
@@ -37,10 +38,10 @@ body {
   
 }
 
-/* .App {
-  background-image: url('./assets/nebula.jpg');
+.App {
+  background-image: url('./assets/room.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.8s ease-in-out;
-} */
+  /* transition: 0.8s ease-in-out; */
+}
 
