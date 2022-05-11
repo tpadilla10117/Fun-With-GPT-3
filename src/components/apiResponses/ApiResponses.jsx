@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 function ApiResponses( { apiResponseState } ) {
 
@@ -20,28 +20,37 @@ function ApiResponses( { apiResponseState } ) {
           </div>
         )
       })
-    } else if(apiResponseState) {
-        return apiResponseState.map( (response, index) => {
-          return (
-            <div className='apiResponses-wrapper' key={index}>
-              <p>
-                <b>Prompt:</b> {response.postData}
-              </p>
-              <p>
-                <b>Response:</b> {response.apiResponseData}
-              </p>
-
-            </div>
-          )
-        })
     } else {
-      return <div className='apiResponses-wrapper'>
-      No Responses
-    </div>
+      console.log('No Data Condition:')
+      return <div>No data</div>
     }
 
 
   };
+
+
+  useEffect( () => {
+    
+    if(parseSavedResponses) {
+      return parseSavedResponses.map( (response, index) => {
+        return (
+          <div className='apiResponses-wrapper' key={index}>
+                <p>
+                  <b>Prompt:</b> {response.postData}
+                </p>
+                <p>
+                  <b>Response:</b> {response.apiResponseData}
+                </p>
+
+          </div>
+        )
+      })
+    } else {
+      console.log('No Data Condition:')
+      return <div>No data</div>
+    }
+
+  },[parseSavedResponses]);
 
   
   
@@ -58,7 +67,7 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
       {renderCorrectDomElementsBasedOnUserInput()}
         
 
-      {/* {
+     {/*  {
         parseSavedResponses ?
           parseSavedResponses.map( (response, index) => {
             return (
@@ -124,3 +133,22 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
 };
 
 export default ApiResponses;
+
+
+/* 
+ - If I have data in localStorage || if I'm using the state value,
+    - return the data from localStorage
+
+  - else, return <div>No Data</>
+
+
+
+  OR:
+
+  If parseSavedResponses changes,
+    - call a function that returns the parsed data from storage
+
+
+    if firing from a useEffect, how can I store the data and render it in React?
+
+*/

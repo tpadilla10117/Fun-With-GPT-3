@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 /* import axios from 'axios'; */
 import { CtaButton, ApiResponses } from '../utils';
 /* const { Configuration, OpenAIApi } = require("openai"); */
@@ -119,8 +119,8 @@ function Form( { content } ) {
       <div className='form-wrapper'>
         <form className='form' onSubmit={submitForm} >
             <div className='form-input-wrapper'>
-                <label />
-                <input placeholder='Message' name='message' type='text' required ref={formInputRef}
+                <label htmlFor='form-input' className='form-input-label'>Enter a Prompt Below:</label>
+                <textarea id='form-input' rows='5' name='form-input' type='text' required ref={formInputRef}
                 onChange={handleChange}
                 />
             </div>
