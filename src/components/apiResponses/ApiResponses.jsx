@@ -18,9 +18,9 @@ function ApiResponses( { apiResponseState } ) {
                   <p>
                     Prompt: {response}
                   </p>
-                {/*   <p>
+                  <p>
                     Response: TBD
-                  </p> */}
+                  </p>
 
                 </div>
               )

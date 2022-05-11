@@ -39,11 +39,11 @@ function Form( { content } ) {
     const submitForm = (event) => {
         event.preventDefault();
      
-        console.log('Here is testData: ', testData)
+        console.log('Here is testData: ', testData.prompt)
         console.log('Here is postData: ', postData)
        
         postRequest();
-        setPostDataArray([postData, ...postDataArray]);
+        /* setPostDataArray([postData, ...postDataArray]); */
         /* setPostData(''); */
     };
     console.log("My postData without doing anything: ", postData)
@@ -94,7 +94,11 @@ function Form( { content } ) {
             console.log('The result of Post req with Fetch: ', result);
             /* setPostData(result); */
             localStorage.setItem('initial-responses', JSON.stringify( result ));
-            console.log('The text response of my API call:: ', result.choices[0].text )
+            console.log('The text response of my API call:: ', result.choices[0].text );
+        /* TODO: HEre I need to make an array of objects to iterate over: */
+            setPostDataArray(
+                [postData, result.choices[0].text, ...postDataArray]
+            );
         });
     };
 
