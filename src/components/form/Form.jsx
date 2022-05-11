@@ -94,6 +94,7 @@ function Form( { content } ) {
             console.log('The result of Post req with Fetch: ', result);
             /* setPostData(result); */
             localStorage.setItem('initial-responses', JSON.stringify( result ));
+            console.log('The text response of my API call:: ', result.choices[0].text )
         });
     };
 
