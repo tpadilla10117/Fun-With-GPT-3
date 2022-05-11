@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 /* import axios from 'axios'; */
 import { CtaButton, ApiResponses } from '../utils';
 /* const { Configuration, OpenAIApi } = require("openai"); */
@@ -19,9 +19,9 @@ require('dotenv').config();
 
 function Form( { content } ) {
 
-    const formInputRef = useRef(null);
+    const formInputRef = useRef();
     const [ postData, setPostData ] = useState('');
-    const [ testDataState, setTestDataState] = useState('');
+    const [ postDataArray, setPostDataArray] = useState( [] );
 
 /* The Request body for my POST Request: */
 
@@ -38,12 +38,22 @@ function Form( { content } ) {
 
     const submitForm = (event) => {
         event.preventDefault();
-        /* console.log('The result of my useRef: ', formInputRef.current.value) */
+     
         console.log('Here is testData: ', testData)
+        console.log('Here is postData: ', postData)
+       
         postRequest();
-        setPostData('');
+        setPostDataArray([postData, ...postDataArray]);
+        /* setPostData(''); */
     };
-    
+    console.log("My postData without doing anything: ", postData)
+    console.log("Data to pass onto child component: ", postDataArray)
+
+    const handleChange = (event) => {
+        const value = event.target.value;
+        setPostData(value);
+    };
+
 
     /* const getRequestTest = async () => {
         try {
@@ -98,11 +108,11 @@ function Form( { content } ) {
       </div>
 
       <div className='form-wrapper'>
-        <form className='form'>
+        <form className='form' onSubmit={submitForm} >
             <div className='form-input-wrapper'>
                 <label />
-                <textarea rows='5' placeholder='Message' name='message' required ref={formInputRef} value={postData}
-                    onChange={event => setPostData(event.target.value)}
+                <input placeholder='Message' name='message' type='text' required ref={formInputRef}
+                onChange={handleChange}
                 />
             </div>
 
@@ -110,17 +120,31 @@ function Form( { content } ) {
             <CtaButton 
                 classnames={'form-submit-btn'}
                 text={'Submit'}
-                clickHandler={event => submitForm(event)}
+                /* clickHandler={event => submitForm(event)} */
             />
 
         </form>
 
       </div>
+      {/* <ApiResponses 
+                apiResponseState={postDataArray}
+            /> */}
 
     {/* TODO: Need to pass state down to ApiResponses to render out a feed: */}
-      <ApiResponses 
-        apiResponseState={''}
-      />
+        {
+            postDataArray ?
+
+            <ApiResponses 
+                apiResponseState={postDataArray}
+            /> 
+
+            :
+
+            <div>
+                No Responses Yet!
+            </div>
+        }
+      
 
     
 
