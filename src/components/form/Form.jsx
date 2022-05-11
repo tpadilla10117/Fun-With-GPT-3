@@ -95,9 +95,11 @@ function Form( { content } ) {
             /* setPostData(result); */
             localStorage.setItem('initial-responses', JSON.stringify( result ));
             console.log('The text response of my API call:: ', result.choices[0].text );
-        /* TODO: HEre I need to make an array of objects to iterate over: */
+            const apiResponseData = result.choices[0].text;
+
+        /* Here I make an array of objects to iterate over in <ApiResponses />: */
             setPostDataArray(
-                [postData, result.choices[0].text, ...postDataArray]
+                [ {postData, apiResponseData} , ...postDataArray]
             );
         });
     };
