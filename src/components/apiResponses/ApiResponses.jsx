@@ -62,7 +62,7 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
     <section className='apiResponses-parent-container'>
         {/* TODO: Would need to .map over apiResponseState (the app state) and render out responses */}
       
-      <h3>Responses:</h3>
+      <h3 className='apiResponses-header'>Responses:</h3>
       
       {renderCorrectDomElementsBasedOnUserInput()}
         

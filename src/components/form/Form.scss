@@ -53,6 +53,11 @@
                     font-weight: bold;
                     font-family: 'Roboto Condensed', 'monseratt', sans-serif;
                     line-height: 1.5;
+                    background-color: rgba(0, 0, 0, 0.348);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border-radius: 5px;
+                    padding: .5rem;
                     
                 }
 
@@ -64,10 +69,15 @@
                     border-radius: 25px;
                     transition: .2s ease-in;
                     border: 2px transparent grey;
+                    background-color: #ffffff10;
+                    /* background-color: #fff; */
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
 
 
                     &:hover {
                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                        background-color: white;
                     }
 
                     
