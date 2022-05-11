@@ -92,8 +92,7 @@ function Form( { content } ) {
         .then(result => result.json() )
         .then( result => {
             console.log('The result of Post req with Fetch: ', result);
-            /* setPostData(result); */
-            localStorage.setItem('initial-responses', JSON.stringify( result ));
+            
             console.log('The text response of my API call:: ', result.choices[0].text );
             const apiResponseData = result.choices[0].text;
 
@@ -101,7 +100,10 @@ function Form( { content } ) {
             setPostDataArray(
                 [ {postData, apiResponseData} , ...postDataArray]
             );
+        /* Here I save the array of objects in LocalStorage: */
+            localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] ));
         });
+
     };
 
     

@@ -1,25 +1,54 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 function ApiResponses( { apiResponseState } ) {
 
+  const savedResponsesString = localStorage.getItem('initial-responses');
+  const parseSavedResponses = JSON.parse(savedResponsesString);
+  
 
-  const [ formState, setFormState ] = useState();
-
+console.log(apiResponseState)
+console.log( 'Coming from localStorage: ',typeof savedResponsesString);
+console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
   return (
     <section className='apiResponses-parent-container'>
         {/* TODO: Would need to .map over apiResponseState (the app state) and render out responses */}
-      Api form
+      
+      <h3>Responses:</h3>
 
-      {apiResponseState ? 
+      {
+        parseSavedResponses ?
+          parseSavedResponses.map( (response, index) => {
+            return (
+              <div className='apiResponses-wrapper' key={index}>
+                    <p>
+                      <b>Prompt:</b> {response.postData}
+                    </p>
+                    <p>
+                      <b>Response:</b> {response.apiResponseData}
+                    </p>
+
+              </div>
+            )
+          })
+
+        :
+
+        <div className='apiResponses-wrapper'>
+              No Responses
+        </div>
+         
+      }
+
+      {/* {apiResponseState ? 
             
             apiResponseState.map( (response, index) => {
               return (
                 <div className='apiResponses-wrapper' key={index}>
                   <p>
-                    Prompt: {response.postData}
+                    <b>Prompt:</b> {response.postData}
                   </p>
                   <p>
-                    Response: {response.apiResponseData}
+                    <b>Response:</b> {response.apiResponseData}
                   </p>
 
                 </div>
@@ -32,7 +61,7 @@ function ApiResponses( { apiResponseState } ) {
               No Responses
             </div>
         
-          }
+          } */}
 
      
     </section>

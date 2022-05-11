@@ -1,7 +1,14 @@
 .apiResponses-parent-container {
     height: 100%;
     border: 1px solid yellow;
+    
+    .apiResponses-wrapper {
 
+        p {
+            color: black;
+            margin: 10px;
+        }
+    }
 
     
 }
