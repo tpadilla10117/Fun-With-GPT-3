@@ -2,7 +2,7 @@
 
 - An application that uses the GPT-3 AI model created by OpenAI { https://openai.com/api/ }.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
 
-- In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpretted output.
+- In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpreted output.
 
 ## Table of Contents:
 * [Deployment](#Deployment)
