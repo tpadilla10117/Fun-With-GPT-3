@@ -1,6 +1,8 @@
 # App Description
 
-- TBD
+- An application that uses the GPT-3 AI model created by OpenAI {https://openai.com/api/}.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
+
+- In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpretted output.
 
 ## Table of Contents:
 * [Deployment](#Deployment)
@@ -8,28 +10,49 @@
 * [Cloning Instructions](#cloning-instructions)
 * [Tech Stack](#tech-stack)
 * [Dependencies](#dependencies)
-* [Limitations](#limitations)
+* [Limitations](#limitations--ideas-for-improvement)
 * [TroubleShooting](#troubleshooting--bugs)
 * [Scripts](#getting-started-with-create-react-app)
 
 ## Deployment:
 
--Via Vercel @ {}
+- Via Vercel @ {}
 
 ## Usage Instructions:
-- 1) 
+- 1) Navigate to the deployed URL at: 
 
-- 2) You can navigate the datasets with pagination by using the navigation buttons fixed to the screen
+- 2) Click on the form input field, colored white and immediately after the Page's main title, 'Fun with A.I.'
 
-- 3) In addition, you can also query by date -> formatted as {date=2014-10-01} to return a single Image (***NOTE: A string value is returned***)
+- 3) Type in a prompt.  E.g. "Why are cat's so funny?" 
+
+- 4) Once a prompt has been typed out, click the large blue 'Submit' button
+
+- 5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page!
 
 
 ## Cloning Instructions:
 
-- 1) Create .env file, making sure to add an API key from ___ to your .gitignore file (***NEVER SHARE API KEYS!!!***)
-- 2) `npm i node-modules`
-- 3) `npm i dotenv`
-- 4) `npm i node-sass` & `npm i sass`
+- 1) In the terminal for the project, `npm i dotenv` to install .env.
+    1a) Create a .env file
+    1b) `npm i node-modules` In the terminal
+
+- 2) Create a free account and receive an API Key from  OpenAI:
+
+    2a) Go to https://beta.openai.com/signup
+    2b) Enter your email address and password
+    2c) Verify your email address
+    2d) Verify your phone number by entering the code that is sent to you via SMS
+    2e) Once logged in, go to https://beta.openai.com/account/api-keys to get your secret API key
+
+- 3) Save your secret API Key in your .env file -> ***be sure to add your .env to a .gitignore file to avoid commiting the key publically to a repo!***
+
+- NOTES:
+
+    - Once you have your secret API key you can send requests from your application. Please note that you have $18.00 of free credits - consider using a less expensive model such as “text-curie-001” to ensure that you don’t exceed the limit.
+
+    - Important: You should never expose API keys on the client side in production code because anyone on the internet will have access to your secret key and can make requests with your account. It is however acceptable for the purpose of this application and testing since it won’t be widely available and we don’t expect you to have a backend server.
+
+    - You should consider using environment variables or a key manager to avoid committing your secret API key to your git repository. Check the documentation for your hosting provider for how to do this.
 
 
 ## Tech Stack:
@@ -44,23 +67,26 @@
 
 ### `npm i dotenv` => To load environment variables from `.env` file to `process.env` object
 
+### `npm i node-sass` => CSS pre-processor
+
 Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
 
 - react, react-dom, react-scripts, sass, node-sass, cors
 
-## Limitations:
+## Limitations & Ideas For Improvement:
 
-- As of 05/10/22, 
+- As of 05/12/22:
 
-    - 1) 
+    - Reset the form field once a user clicks the 'Submit' button
+    - App is MOSTLY responsive; should make fully responsive
+    - Let the user choose the AI engine from a select box
+    - Add some presets for the user to quickly send a good prompt
+    - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
+
 
 ## TroubleShooting & Bugs:
-    - **NOTE: if query a date, you don't receive a JSON Array, but rather a string
-    - **NOTE: count=integer and start_date to end_date return JSON Arrays
-
-    - a) Currently, once a specific card's like button is clicked for the first time, state is maintained upon refresh
-
-    - b) if user makes a new query, the first card to return will have it's like button showing as active; however, if refreshed on this same card, active state is removed.  IF user return's to original card, the state is also gone.  YET a refresh on the original card will return the active state on the like button
+    - **NOTE: UI form field doesn't clear upon submitting a prompt
+    - **NOTE: 
 
 ## Getting Started with Create React App
 

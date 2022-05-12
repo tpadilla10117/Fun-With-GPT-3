@@ -1,10 +1,12 @@
 <!-- Sample web service requests: -->
-https://beta.openai.com/overview
+OpenAI: https://beta.openai.com/overview
 
 <!-- Objectives: -->
     1) Fetch data from OpenAI API [x]
     2) Display a form that takes in a prompt as a submission [x]
     3) Styling [x]
+    4) Results displayed in a list, sorted from newest to oldest. Each including original prompt and a response from the API. [x]
+    5) Save responses if the user leaves or reloads the page [x]
    
 
 
@@ -28,13 +30,9 @@ https://beta.openai.com/overview
     - {https://sass-lang.com/install} 
 
 
-<!-- TODO: Limitations -->
-    - 1) Would be nice to show query instructions on the UI, perhaps a modal on initial render, and a button that renders the modal on click
-    - 2) Like-state maintained in local storage persist for any similarly indexed card - need unique identifier in backend for proper state mgmt...unless it's a re-render issue
-
-    //TODO: The single query is not rendering properly, yet a start_date&end_date works
-
-    TroubleShooting Bugs:
+<!-- General Notes: -->
+    - Save some styles to SCSS variables in the parent level SCSS file
+    - Fix responsive design to be fully Responsive
 
     
 

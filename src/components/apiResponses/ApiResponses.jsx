@@ -12,7 +12,7 @@ console.log('test:', apiResponseState)
 
   return (
     <section className='apiResponses-parent-container'>
-  {/* I .map over apiResponseState (the app state) and render out responses */}
+  {/* I .map / loop over apiResponseState (the app state) and render out responses */}
       
       <h3 className='apiResponses-header'>Responses:</h3>
       
