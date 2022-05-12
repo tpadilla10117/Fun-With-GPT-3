@@ -27,7 +27,7 @@ function Form( { content } ) {
     
 /* TODO: Stretch Goal: Sample Prompts: */
 
-    /* const samplePrompts = [
+    const samplePrompts = [
         {
             Prompt: 'What is the meaning of life?',
             id: 1
@@ -48,7 +48,7 @@ function Form( { content } ) {
             Prompt: 'I love hiking!',
             id: 5
         },
-    ]; */
+    ];
 
 /* The submitForm function is a Click Handler for when a user submits a form: */
 
@@ -133,6 +133,30 @@ function Form( { content } ) {
       <div className='form-wrapper'>
         <form className='form' onSubmit={submitForm} >
             <div className='form-input-wrapper'>
+
+                <div className='form-input-dropdown-parent'>
+                    <div className='form-input-dropdown dropdown'>
+                        <ul className='form-input-dropdown-options'>
+                            { samplePrompts.map ( (prompts, index) => {
+                                return (
+                                    <li 
+                                        id='form-input-dropdown-_li' 
+                                        className='form-input-dropdown-_li'
+                                        key={index}
+                                        value={prompts.Prompt}
+                                        name='formInputDropdownSelector'
+                                        /* onClick={ () => revealItems(items.name) }  */
+                                        >
+                                        {prompts.Prompt}
+                                    </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+
                 <label htmlFor='form-input' className='form-input-label'>Enter a Prompt Below:</label>
                 <textarea id='form-input' rows='5' name='form-input' type='text' required ref={formInputRef}
                 onChange={handleChange}

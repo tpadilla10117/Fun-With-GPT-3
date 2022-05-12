@@ -47,6 +47,33 @@
                 @media (min-width: 620px) {
                     width: 80%;
                 }
+            
+            /* TODO: Styles for Dropdown: */
+                /* .form-input-dropdown-parent {
+                    position: relative;
+                    margin: 23px 0px 0px 0px;
+                    display: inline-block;
+                    .form-input-dropdown .dropdown {
+
+                        .form-input-dropdown-options {
+                            display: none;
+                            position: absolute;
+                            background-color: #FFFFFF;
+                            z-index: 1;
+                            margin-top: 5px;
+                            width: 400px;
+                            min-width: 160px;
+                            overflow: auto;
+                            color: black;
+                            border-radius: 4px;
+                            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+                            .form-input-dropdown-_li {
+
+                            }
+                        }
+                    }
+                } */
 
                 .form-input-label {
                     color: #fff;
