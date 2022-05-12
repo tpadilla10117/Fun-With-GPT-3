@@ -18,7 +18,7 @@
     
     .apiResponses-wrapper {
         border: 1px solid rgb(128, 128, 128);
-        height: 200px;
+        height: 250px;
         width: 100%;
         margin: 10px 0px 0 0;
         border-radius: 5px;
@@ -30,6 +30,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
+        overflow-y: scroll;
         
 
         @media (min-width: 820px) {
