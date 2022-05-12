@@ -1,21 +1,10 @@
 import React, { useRef, useState } from 'react';
-/* import axios from 'axios'; */
 import { CtaButton, ApiResponses } from '../utils';
-/* const { Configuration, OpenAIApi } = require("openai"); */
+
 
 require('dotenv').config();
 
     const apiKey = process.env.REACT_APP_OPEN_AI_KEY;
-
-    /* const BASE_URL = 'https://api.openai.com/v1/engines/text-curie-001/completions';
-    const TEST_BASE_URL = `${apiKey}https://api.openai.com/v1/engines/text-curie-001/`; */
-
-    /* const configuration = new Configuration({
-        apiKey: apiKey,
-    }); */
-
-    /* const openai = new OpenAIApi(configuration); */
-
 
 function Form( { content } ) {
 
@@ -43,39 +32,17 @@ function Form( { content } ) {
         console.log('Here is postData: ', postData)
        
         postRequest();
-        /* setPostDataArray([postData, ...postDataArray]); */
-        /* setPostData(''); */
+     
     };
+
     console.log("My postData without doing anything: ", postData)
     console.log("Data to pass onto child component: ", postDataArray)
 
+/* handleChange(event) is a controlled form input: */
     const handleChange = (event) => {
         const value = event.target.value;
         setPostData(value);
     };
-
-
-    /* const getRequestTest = async () => {
-        try {
-            const response = await openai.listEngines();
-            console.log('Response from the getRequestTest: ', response);
-        } catch(error) {
-            console.error(error);
-        }
-    }; */
-
-/* The logic for a POST Request using the openai library:  */
-    /* const postRequest = async () => {
-        try {
-            const response = await openai.createCompletion("text-curie-001", {
-                prompt: "write a poem about dinosaurs in the snow",
-                max_tokens: 5,
-              });
-              console.log('Response from my POST Request: ', response)
-        } catch(error) {
-            console.error(error);
-        }
-    } */
 
 /* The logic for a POST Request using fetch:  */
 
@@ -109,11 +76,9 @@ function Form( { content } ) {
     
   return (
     <section className='form-parent-container'>
-        
-      {/* <img src={bannerImg} alt={alt} className='emailForm-img' /> */}
 
       <div className='form-header-parent-container'>
-        <h1 className='form-header'>Fun With AI</h1>
+        <h1 className='form-header'>Fun With A.I.</h1>
       </div>
 
       <div className='form-wrapper'>
@@ -135,11 +100,8 @@ function Form( { content } ) {
         </form>
 
       </div>
-      {/* <ApiResponses 
-                apiResponseState={postDataArray}
-            /> */}
 
-    {/* TODO: Need to pass state down to ApiResponses to render out a feed: */}
+    {/* I pass state down to ApiResponses to render out a feed: */}
         {
             postDataArray ?
 
@@ -153,8 +115,6 @@ function Form( { content } ) {
                 No Responses Yet!
             </div>
         }
-      
-
     
 
     </section>

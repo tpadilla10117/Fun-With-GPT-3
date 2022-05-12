@@ -2,8 +2,9 @@
 https://beta.openai.com/overview
 
 <!-- Objectives: -->
-    1) Fetch data from OpenAI API []
-    2) Display a form that takes in a prompt as a submission []
+    1) Fetch data from OpenAI API [x]
+    2) Display a form that takes in a prompt as a submission [x]
+    3) Styling [x]
    
 
 

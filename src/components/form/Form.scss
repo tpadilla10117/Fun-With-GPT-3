@@ -69,15 +69,15 @@
                     border-radius: 25px;
                     transition: .2s ease-in;
                     border: 2px transparent grey;
-                    background-color: #ffffff10;
-                    /* background-color: #fff; */
+                    /* background-color: #ffffff10; */
+                    background-color: #fff;
                     backdrop-filter: blur(12px);
                     -webkit-backdrop-filter: blur(12px);
 
 
                     &:hover {
                         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                        background-color: white;
+                        /* background-color: white; */
                     }
 
                     
@@ -88,5 +88,20 @@
 
             } */
         }
+    }
+
+    .form-error {
+        border: 1px solid rgb(128, 128, 128);
+        height: 200px;
+        width: 100%;
+        margin: 10px 0px 0 0;
+        border-radius: 5px;
+        background-color: #ffffff10;
+        /* background-color: #fff; */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: .2s ease-in;
+        display: flex;
+        flex-direction: column;
     }
 }

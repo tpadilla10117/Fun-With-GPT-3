@@ -6,6 +6,7 @@ function ApiResponses( { apiResponseState } ) {
   const parseSavedResponses = JSON.parse(savedResponsesString);
 
   const renderCorrectDomElementsBasedOnUserInput = () => {
+    console.log('Coming from the render function...');
     if(parseSavedResponses) {
       return parseSavedResponses.map( (response, index) => {
         return (
@@ -22,7 +23,9 @@ function ApiResponses( { apiResponseState } ) {
       })
     } else {
       console.log('No Data Condition:')
-      return <div>No data</div>
+      return <div className='apiResponses-wrapper'>
+        <h1>No Data!  Try Submitting a Prompt Above!</h1>
+      </div>
     }
 
 
@@ -30,9 +33,9 @@ function ApiResponses( { apiResponseState } ) {
 
 
   useEffect( () => {
+    console.log('Firing my useEffect...')
     
-    if(parseSavedResponses) {
-      return parseSavedResponses.map( (response, index) => {
+       return apiResponseState.map( (response, index) => {
         return (
           <div className='apiResponses-wrapper' key={index}>
                 <p>
@@ -45,12 +48,8 @@ function ApiResponses( { apiResponseState } ) {
           </div>
         )
       })
-    } else {
-      console.log('No Data Condition:')
-      return <div>No data</div>
-    }
-
-  },[parseSavedResponses]);
+    
+  },[apiResponseState]);
 
   
   
@@ -64,69 +63,49 @@ console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
       
       <h3 className='apiResponses-header'>Responses:</h3>
       
-      {renderCorrectDomElementsBasedOnUserInput()}
-        
-
-     {/*  {
-        parseSavedResponses ?
-          parseSavedResponses.map( (response, index) => {
-            return (
-              <div className='apiResponses-wrapper' key={index}>
-                    <p>
-                      <b>Prompt:</b> {response.postData}
-                    </p>
-                    <p>
-                      <b>Response:</b> {response.apiResponseData}
-                    </p>
-
-              </div>
-            )
-          })
-
-        :
+      {
+        !apiResponseState ?
 
         apiResponseState.map( (response, index) => {
           return (
             <div className='apiResponses-wrapper' key={index}>
-              <p>
-                <b>Prompt:</b> {response.postData}
-              </p>
-              <p>
-                <b>Response:</b> {response.apiResponseData}
-              </p>
-
+                  <p>
+                    <span className='p-spantxt'>Prompt:</span> {response.postData}
+                  </p>
+                  <p>
+                    <span className='p-spantxt'>Response:</span> {response.apiResponseData}
+                  </p>
+  
             </div>
           )
-        })
- 
-      } */}
+        }) 
 
-      
+        :
 
-      {/* {apiResponseState ? 
-            
-            apiResponseState.map( (response, index) => {
-              return (
-                <div className='apiResponses-wrapper' key={index}>
+        <div className='apiResponses-wrapper'>
+          <h1>No Data!  Try Submitting a Prompt Above!</h1>
+        </div> 
+
+      }
+        {/* <div className='apiResponses-wrapper'>
+          <h1>No Data!  Try Submitting a Prompt Above!</h1>
+        </div> */}
+
+     
+
+     {/* parseSavedResponses.map( (response, index) => {
+          return (
+            <div className='apiResponses-wrapper' key={index}>
                   <p>
-                    <b>Prompt:</b> {response.postData}
+                    <span className='p-spantxt'>Prompt:</span> {response.postData}
                   </p>
                   <p>
-                    <b>Response:</b> {response.apiResponseData}
+                    <span className='p-spantxt'>Response:</span> {response.apiResponseData}
                   </p>
-
-                </div>
-              )
-            })
-
-            :
-
-            <div className='apiResponses-wrapper'>
-              No Responses
+  
             </div>
-        
-          } */}
-
+          )
+        }) */}
      
     </section>
   )
