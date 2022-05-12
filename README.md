@@ -16,7 +16,7 @@
 
 ## Deployment:
 
-- Via Vercel @ {}
+- Via Vercel @ {https://fun-with-gpt-3-g3zzqyhi1-tpadilla10117.vercel.app/ }
 
 ## Usage Instructions:
     1) Navigate to the deployed URL at: 
