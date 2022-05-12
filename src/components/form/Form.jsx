@@ -86,11 +86,12 @@ function Form( { content } ) {
                 setPostDataArray(
                     [ {postData, apiResponseData} , ...postDataArray]
                 );
-                 /* Here I save the array of objects in LocalStorage: */
-            localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] ));
-            }
         /* Here I save the array of objects in LocalStorage: */
-            /* localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] )); */
+                localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] ));
+            }
+
+        /* Here I save the array of objects in LocalStorage: */
+            
             setPostData('')
         });
 
@@ -111,14 +112,14 @@ function Form( { content } ) {
                 <textarea id='form-input' rows='5' name='form-input' type='text' required ref={formInputRef}
                 onChange={handleChange}
                 />
-            </div>
-
     {/* Where the 'Submit' button is rendered: */}
             <CtaButton 
                 classnames={'form-submit-btn'}
                 text={'Submit'}
                 /* clickHandler={event => submitForm(event)} */
             />
+            </div>
+
 
         </form>
 
@@ -134,7 +135,9 @@ function Form( { content } ) {
             {
                 !savedResponsesString ? 
 
-                <div><h1>No data</h1></div>
+                <div className='form-nodata'>
+                    <h1>No data</h1>
+                </div>
 
                 :
 

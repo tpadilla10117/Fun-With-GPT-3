@@ -5,7 +5,7 @@
     /* border: 1px solid yellow; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 
     .apiResponses-header {
         background-color: rgba(0, 0, 0, 0.348);
@@ -33,7 +33,8 @@
         
 
         @media (min-width: 820px) {
-            width: 80%;
+            width: 100%;
+            height: 300px;
         }
 
         h1 {
