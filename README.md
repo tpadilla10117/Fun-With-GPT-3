@@ -1,6 +1,6 @@
 # App Description
 
-- An application that uses the GPT-3 AI model created by OpenAI {https://openai.com/api/}.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
+- An application that uses the GPT-3 AI model created by OpenAI { https://openai.com/api/ }.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
 
 - In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpretted output.
 
@@ -19,15 +19,15 @@
 - Via Vercel @ {}
 
 ## Usage Instructions:
-- 1) Navigate to the deployed URL at: 
+    1) Navigate to the deployed URL at: 
 
-- 2) Click on the form input field, colored white and immediately after the Page's main title, 'Fun with A.I.'
+    2) Click on the form input field, colored white and immediately after the Page's main title, 'Fun with A.I.'
 
-- 3) Type in a prompt.  E.g. "Why are cat's so funny?" 
+    3) Type in a prompt.  E.g. "Why are cat's so funny?" 
 
-- 4) Once a prompt has been typed out, click the large blue 'Submit' button
+    4) Once a prompt has been typed out, click the large blue 'Submit' button
 
-- 5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page!
+    5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page!
 
 
 ## Cloning Instructions:
@@ -38,11 +38,11 @@
 
 - 2) Create a free account and receive an API Key from  OpenAI:
 
-    2a) Go to https://beta.openai.com/signup
-    2b) Enter your email address and password
-    2c) Verify your email address
-    2d) Verify your phone number by entering the code that is sent to you via SMS
-    2e) Once logged in, go to https://beta.openai.com/account/api-keys to get your secret API key
+    - 2a) Go to https://beta.openai.com/signup
+    - 2b) Enter your email address and password
+    - 2c) Verify your email address
+    - 2d) Verify your phone number by entering the code that is sent to you via SMS
+    - 2e) Once logged in, go to https://beta.openai.com/account/api-keys to get your secret API key
 
 - 3) Save your secret API Key in your .env file -> ***be sure to add your .env to a .gitignore file to avoid commiting the key publically to a repo!***
 
@@ -62,7 +62,7 @@
 
 ## Dependencies:
 
-### `npm install axios` {https://www.npmjs.com/package/axios} 
+### `npm install axios` { https://www.npmjs.com/package/axios } 
     - Promise based HTTP client for the browser and node.js
 
 ### `npm i dotenv` => To load environment variables from `.env` file to `process.env` object
