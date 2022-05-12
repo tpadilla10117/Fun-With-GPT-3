@@ -11,6 +11,8 @@ function Form( { content } ) {
     const formInputRef = useRef();
     const [ postData, setPostData ] = useState('');
     const [ postDataArray, setPostDataArray] = useState( [] );
+    const savedResponsesString = localStorage.getItem('initial-responses');
+    const parseSavedResponses = JSON.parse(savedResponsesString);
 
 /* The Request body for my POST Request: */
 
@@ -64,11 +66,32 @@ function Form( { content } ) {
             const apiResponseData = result.choices[0].text;
 
         /* Here I make an array of objects to iterate over in <ApiResponses />: */
-            setPostDataArray(
-                [ {postData, apiResponseData} , ...postDataArray]
-            );
-        /* Here I save the array of objects in LocalStorage: */
+
+            if(savedResponsesString) {
+
+            /* If I had a string in local storage, I have to take my parsed data from local Storage
+                - then unshift() the new object into the existing array
+                - then re-stringify the updated array
+                - then re-set the array back in localStorage
+            */
+                parseSavedResponses.unshift( {postData, apiResponseData} ) ;
+                let reconvertedSavedResponses = JSON.stringify(parseSavedResponses);
+                localStorage.setItem('initial-responses', reconvertedSavedResponses);
+                console.log('Here is my test: ', typeof reconvertedSavedResponses)
+
+               /*  setPostDataArray(
+                    [ {postData, apiResponseData} , ...postDataArray]
+                ); */
+            } else {
+                setPostDataArray(
+                    [ {postData, apiResponseData} , ...postDataArray]
+                );
+                 /* Here I save the array of objects in LocalStorage: */
             localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] ));
+            }
+        /* Here I save the array of objects in LocalStorage: */
+            /* localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] )); */
+            setPostData('')
         });
 
     };
@@ -102,20 +125,21 @@ function Form( { content } ) {
       </div>
 
     {/* I pass state down to ApiResponses to render out a feed: */}
-        {
-            postDataArray ?
-
+        
             <ApiResponses 
                 apiResponseState={postDataArray}
             /> 
 
-            :
 
-            <div>
-                No Responses Yet!
-            </div>
-        }
-    
+            {
+                !savedResponsesString ? 
+
+                <div><h1>No data</h1></div>
+
+                :
+
+                ''
+            }
 
     </section>
   )
