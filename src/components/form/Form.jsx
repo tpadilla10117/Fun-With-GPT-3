@@ -54,16 +54,8 @@ function Form( { content } ) {
 
     const submitForm = (event) => {
         event.preventDefault();
-     
-        console.log('Here is testData: ', testData.prompt)
-        console.log('Here is postData: ', postData)
-       
         postRequest();
-     
     };
-
-    console.log("My postData without doing anything: ", postData)
-    console.log("Data to pass onto child component: ", postDataArray)
 
 /* handleChange(event) is a controlled form input: */
     const handleChange = (event) => {
@@ -85,9 +77,7 @@ function Form( { content } ) {
         })
         .then(result => result.json() )
         .then( result => {
-            console.log('The result of Post req with Fetch: ', result);
-            
-            console.log('The text response of my API call:: ', result.choices[0].text );
+       
             const apiResponseData = result.choices[0].text;
 
         /* Here I make an array of objects to iterate over in <ApiResponses />: */
@@ -102,11 +92,7 @@ function Form( { content } ) {
                 parseSavedResponses.unshift( {postData, apiResponseData} ) ;
                 let reconvertedSavedResponses = JSON.stringify(parseSavedResponses);
                 localStorage.setItem('initial-responses', reconvertedSavedResponses);
-                console.log('Here is my test: ', typeof reconvertedSavedResponses)
 
-               /*  setPostDataArray(
-                    [ {postData, apiResponseData} , ...postDataArray]
-                ); */
             } else {
                 setPostDataArray(
                     [ {postData, apiResponseData} , ...postDataArray]

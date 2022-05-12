@@ -1,14 +1,9 @@
 import React from 'react'
 
 function ApiResponses( { apiResponseState } ) {
-console.log('test:', apiResponseState)
+
   const savedResponsesString = localStorage.getItem('initial-responses');
   const parseSavedResponses = JSON.parse(savedResponsesString);
-
-
-  console.log(apiResponseState)
-  console.log( 'Coming from localStorage: ',typeof savedResponsesString);
-  console.log( ' parsing the localStorage items: ', typeof parseSavedResponses)
 
   return (
     <section className='apiResponses-parent-container'>
