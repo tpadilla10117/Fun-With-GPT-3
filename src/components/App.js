@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { 
-  Home
+import {
+  Spinner
 } from './utils';
+
+const Home = lazy( () => import('../pages/home/Home.jsx') );
 
 function App() {
 
   return (
-    <div className='App'>
+      <Suspense fallback={<Spinner />}>
+        <div className='App'>
+            <Routes>
 
-    <Routes>
+              <Route exact path='/' element={<Home />} />
 
-      <Route exact path='/' element={<Home />} />
-
-    </Routes>
-    
-
-    </div>
+            </Routes>
+        </div>
+      </Suspense>
   );
 }
 

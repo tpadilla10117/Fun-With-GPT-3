@@ -4,7 +4,7 @@ import { CtaButton, ApiResponses } from '../utils';
 
 require('dotenv').config();
 
-    const apiKey = process.env.REACT_APP_OPEN_AI_KEY;
+const apiKey = process.env.REACT_APP_OPEN_AI_KEY;
 
 function Form( { content } ) {
 
@@ -24,31 +24,6 @@ function Form( { content } ) {
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
     };     
-    
-/* TODO: Stretch Goal: Sample Prompts: */
-
-    /* const samplePrompts = [
-        {
-            Prompt: 'What is the meaning of life?',
-            id: 1
-        },
-        {
-            Prompt: 'Why are cats rude?',
-            id: 2
-        },
-        {
-            Prompt: 'Why are dogs dumb?',
-            id: 3
-        },
-        {
-            Prompt: 'Write a poem about pizza',
-            id: 4
-        },
-        {
-            Prompt: 'I love hiking!',
-            id: 5
-        },
-    ]; */
 
 /* The submitForm function is a Click Handler for when a user submits a form: */
 
@@ -59,7 +34,7 @@ function Form( { content } ) {
 
 /* handleChange(event) is a controlled form input: */
     const handleChange = (event) => {
-        const value = event.target.value;
+        let value = event.target.value;
         setPostData(value);
     };
 
@@ -100,8 +75,6 @@ function Form( { content } ) {
         /* Here I save the array of objects in LocalStorage: */
                 localStorage.setItem('initial-responses', JSON.stringify( [ {postData, apiResponseData} , ...postDataArray] ));
             }
-
-        /* Here I save the array of objects in LocalStorage: */
             
             setPostData('')
         });

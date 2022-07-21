@@ -83,6 +83,9 @@ Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variabl
     - Add some presets for the user to quickly send a good prompt
     - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
 
+    - Stretch Goals:
+        - Allow user's to choose a specific AI model:
+
 
 ## TroubleShooting & Bugs:
     - **NOTE: UI form field doesn't clear upon submitting a prompt
