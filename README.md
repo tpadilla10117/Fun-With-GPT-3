@@ -58,7 +58,7 @@
 ## Tech Stack:
 
 - Node.js, JS, React.js, HTML, SCSS
-- NASA APOD API { https://github.com/nasa/apod-api }
+- OpenAI { https://openai.com/api/ }
 
 ## Dependencies:
 
